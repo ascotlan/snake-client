@@ -1,8 +1,7 @@
-// setup interface to handle user input from stdin
-
 // Stores the active TCP connection object.
 let connection;
 
+// setup interface to handle user input from stdin
 const setupInput = function (conn) {
   connection = conn;
   const stdin = process.stdin;
@@ -14,7 +13,8 @@ const setupInput = function (conn) {
 };
 
 const handleUserInput = function (key) {
-  const move = key.toLowerCase();
+  const move = key.toLowerCase(); //set all input to lowercase in case caps locks is enabled
+
   // \u0003 maps to ctrl+c input
   if (move === "\u0003") {
     process.exit();
@@ -26,9 +26,14 @@ const handleUserInput = function (key) {
     connection.write("Move: down");
   } else if (move === "d") {
     connection.write("Move: right");
+  } else if (move === "p") {
+    connection.write("Say: You too slow!");
+  } else if (move == "l") {
+    connection.write("Say: You can't beat me!");
   } else {
     console.log(
-      `Press w to move up, a to move left, d to move right or s to move down.`
+      // output instruction to use on how to move
+      `Press w to move up, a to move left, d to move right or s to move down. Press ctrl + c to exit game.`
     );
   }
 };

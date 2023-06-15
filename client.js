@@ -12,14 +12,7 @@ const connect = function () {
 
   conn.on("connect", () => {
     console.log("Successfully connected to game server");
-  });
-
-  conn.on("connect", () => {
     conn.write("Name: AKS");
-
-    // setInterval(() => {
-    //   conn.write("Move: up");
-    // }, 50);
   });
 
   //listen for incoming data from the snake server

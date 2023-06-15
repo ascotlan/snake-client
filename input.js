@@ -3,11 +3,11 @@ const { MESSAGE, MOVE } = require("./constants");
 // Stores the active TCP connection object.
 let connection;
 
-//Stores status of connection
+//Stores status of socket connection
 let end = false;
 
 // setup interface to handle user input from stdin
-const setupInput = function(conn) {
+const setupInput = function (conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -23,7 +23,7 @@ const setupInput = function(conn) {
   return stdin;
 };
 
-const handleUserInput = function(input) {
+const handleUserInput = function (input) {
   const key = input.toLowerCase(); //set all input to lowercase in case caps locks is enabled
 
   // \u0003 maps to ctrl+c input

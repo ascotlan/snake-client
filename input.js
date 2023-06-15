@@ -1,3 +1,5 @@
+const { MESSAGE, MOVE } = require("./constants");
+
 // Stores the active TCP connection object.
 let connection;
 
@@ -18,23 +20,16 @@ const handleUserInput = function (key) {
   // \u0003 maps to ctrl+c input
   if (move === "\u0003") {
     process.exit();
-  } else if (move === "w") {
-    connection.write("Move: up");
-  } else if (move === "a") {
-    connection.write("Move: left");
-  } else if (move === "s") {
-    connection.write("Move: down");
-  } else if (move === "d") {
-    connection.write("Move: right");
-  } else if (move === "p") {
-    connection.write("Say: You too slow!");
-  } else if (move == "l") {
-    connection.write("Say: You can't beat me!");
-  } else {
-    console.log(
-      // output instruction to use on how to move
-      `Press w to move up, a to move left, d to move right or s to move down. Press ctrl + c to exit game.`
-    );
+  }
+
+  //if message found send it to game
+  if (MESSAGE[move]) {
+    connection.write(MESSAGE[move]);
+  }
+
+  //if move valid send move to game
+  if (MOVE[move]) {
+    connection.write(MOVE[move]);
   }
 };
 

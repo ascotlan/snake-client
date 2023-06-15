@@ -5,4 +5,5 @@ console.log("Connecting ...");
 
 const conn = connect();
 
+//pass the connection object tot he input handler
 setupInput(conn);

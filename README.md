@@ -28,4 +28,7 @@ During gameplay:
     - To move right type 'd'
 
     - In game messages:
+
       - Type 'p' or 'l' to see in game broadcast messages
+
+  - After game ended use ctrl+c to get prompt back

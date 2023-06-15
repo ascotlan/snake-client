@@ -8,7 +8,10 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["Player name is diplayed when the game first starts"](./images/screenshot1.PNG)
+When games first starts:
+!["Player name is dislayed when the game first starts"](./images/screenshot1.PNG)
+
+During gameplay:
 !["The snake grows as it eats the blocks"](./images/screenshot2.PNG)
 
 ## Getting Started

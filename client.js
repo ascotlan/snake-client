@@ -22,14 +22,12 @@ const connect = function () {
     // }, 50);
   });
 
+  //listen for incoming data from the snake server
+  conn.on("data", (data) => {
+    console.log(data);
+  });
+
   return conn;
 };
-
-console.log("Connecting ...");
-
-//listen for incoming data from the snake server
-connect().on("data", (data) => {
-  console.log(data);
-});
 
 module.exports = { connect };

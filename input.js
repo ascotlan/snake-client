@@ -15,6 +15,7 @@ const setupInput = function(conn) {
   stdin.resume();
   stdin.on("data", handleUserInput);
 
+  //listen for when socket ended by server
   connection.on("end", () => {
     end = true;
   });
